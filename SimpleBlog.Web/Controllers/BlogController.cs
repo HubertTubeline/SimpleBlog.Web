@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using SimpleBlog.Web.Models.Post;
+﻿using System.Web.Mvc;
+using SimpleBlog.DAL.Repositories;
 
 namespace SimpleBlog.Web.Controllers
 {
@@ -9,17 +8,10 @@ namespace SimpleBlog.Web.Controllers
         // GET: Blog
         public ActionResult Index()
         {
-            var posts = new List<PostViewModel>
-            {
-                new PostViewModel
-                    {Id = 0, Title = "Post0", Body = "dnwqjdnqwj", AuthorName = "Hub", AuthorId = "1"},
-                new PostViewModel
-                    {Id = 1, Title = "Post1", Body = "dnwqjdnqwj", AuthorName = "Hub", AuthorId = "1"},
-                new PostViewModel
-                    {Id = 2, Title = "Post2", Body = "dnwqjdnqwj", AuthorName = "Hub", AuthorId = "1"},
-            };
+            var repo = new PostRepository();
+            var posts = repo.Get();
 
-            return View();
+            return View(posts);
         }
 
         // GET: Blog/Details/5

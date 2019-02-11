@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SimpleBlog.DAL.EF.Entities
 {
@@ -12,5 +13,9 @@ namespace SimpleBlog.DAL.EF.Entities
         public List<Comment> Comments { get; set; }
 
         public User Author { get; set; }
+
+        public bool IsUpdated { get; set; }
+
+        public DateTimeOffset PostedTime { get; set; }
     }
 }

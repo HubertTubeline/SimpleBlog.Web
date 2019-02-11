@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBlog.Web", "SimpleBlog.Web\SimpleBlog.Web.csproj", "{39C18B0E-3FDF-4D0F-815C-A09A59150A8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBlog.DAL", "SimpleBlog.DAL\SimpleBlog.DAL.csproj", "{9208EAAF-8DE5-41C6-A344-7E395D518150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBlog.DAL", "SimpleBlog.DAL\SimpleBlog.DAL.csproj", "{9208EAAF-8DE5-41C6-A344-7E395D518150}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using SimpleBlog.DAL.EF;
 using SimpleBlog.DAL.EF.Entities;
@@ -47,11 +48,11 @@ namespace SimpleBlog.DAL.Repositories
             }
         }
 
-        public IList<Post> Get()
+        public IList<Post> Get(int startPosition = 0, int pageSize = 20)
         {
             try
             {
-                return _context.Posts.ToList();
+                return _context.Posts.OrderBy(x => x.PostedTime).Skip(startPosition).Take(pageSize).Include(x => x.Author).Include(x => x.Comments).ToList();
             }
             catch (Exception e)
             {

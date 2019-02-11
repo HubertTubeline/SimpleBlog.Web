@@ -1,0 +1,22 @@
+﻿@using SimpleBlog.DAL.EF.Entities
+@model List<Post>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var item in Model)
+{
+    <h3>@item.Title</h3>
+    <p>@item.Body</p>
+    <h6>@item.Author.FirstName @item.Author.LastName</h6>
+    <br/>
+    {
+        foreach (var comment in item.Comments)
+        {
+            @Html.Partial("_CommentPartial", comment);
+        }
+    }
+    <hr/>
+}
