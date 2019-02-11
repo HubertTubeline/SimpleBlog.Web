@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using SimpleBlog.DAL.Resources
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Simple Blog</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -16,20 +17,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Simple Blog", "Index", "Blog", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Account", "Index", "Account")</li>
+                    <li>@Html.ActionLink(Strings.HomePage, "Index", "Home")</li>
+                    <li>@Html.ActionLink(Strings.Account, "Index", "Account")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                        <li>@Html.ActionLink(Strings.Logout, "Logout", "Account")</li>
                     }
                     else
                     {
-                        <li>@Html.ActionLink("Sign In", "Login", "Account")</li>
-                        <li>@Html.ActionLink("Sign Up", "Register", "Account")</li>
+                        <li>@Html.ActionLink(Strings.SignIn, "Login", "Account")</li>
+                        <li>@Html.ActionLink(Strings.SignUp, "Register", "Account")</li>
                     }
                 </ul>
             </div>
@@ -39,7 +40,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Simple Blog</p>
         </footer>
     </div>
 

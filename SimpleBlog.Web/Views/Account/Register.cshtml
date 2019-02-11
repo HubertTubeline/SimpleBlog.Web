@@ -1,7 +1,8 @@
-﻿@model SimpleBlog.Web.Models.Account.RegisterViewModel
+﻿@using SimpleBlog.DAL.Resources
+@model SimpleBlog.Web.Models.Account.RegisterViewModel
 
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = Strings.Register;
 }
 
 @using (Html.BeginForm())
@@ -23,7 +24,7 @@
             </div>
 
             <div class="form-group">
-                <span class="control-label col-md-2">Password</span>
+                <span class="control-label col-md-2">@Strings.Password</span>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
@@ -31,7 +32,7 @@
             </div>
 
             <div class="form-group">
-                <span class="control-label col-md-2">Confirm password</span>
+                <span class="control-label col-md-2">@Strings.ConfirmPassword</span>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.PasswordConfirm, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.PasswordConfirm, "", new { @class = "text-danger" })
@@ -39,7 +40,7 @@
             </div>
 
             <div class="form-group">
-                <span class="control-label col-md-2">First name</span>
+                <span class="control-label col-md-2">@Strings.FirstName</span>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
@@ -47,7 +48,7 @@
             </div>
 
             <div class="form-group">
-                <span class="control-label col-md-2">Last name</span>
+                <span class="control-label col-md-2">@Strings.LastName</span>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
@@ -56,7 +57,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Register" class="btn btn-default" />
+                    <input type="submit" value="@Strings.SignUp" class="btn btn-default" />
                 </div>
             </div>
         </div>

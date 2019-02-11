@@ -1,9 +1,10 @@
-﻿@model SimpleBlog.Web.Models.Account.LoginViewModel
+﻿@using SimpleBlog.DAL.Resources
+@model SimpleBlog.Web.Models.Account.LoginViewModel
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = Strings.Login;
 }
 
-<h2>Login</h2>
+<h2>@Strings.Login</h2>
 
 @Html.ValidationSummary()
 @using (Html.BeginForm("Login", "Account", FormMethod.Post))
@@ -20,7 +21,7 @@
         </div>
 
         <div class="form-group">
-            <span class="control-label col-md-2">Password</span>
+            <span class="control-label col-md-2">@Strings.Password</span>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
@@ -29,7 +30,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="SignIn" class="btn btn-default" />
+                <input type="submit" value="@Strings.SignIn" class="btn btn-default" />
             </div>
         </div>
     </div>
